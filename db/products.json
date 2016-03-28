@@ -1,0 +1,55 @@
+[{
+  "productId":1,
+  "name":"Kayak",
+  "Description":"A boat for one person",
+  "Category":"WaterSports",
+  "Price":275.00
+},{
+  "productId":2,
+  "name":"Lifejacket",
+  "Description":"Protective and fashionable",
+  "Category":"WaterSports",
+  "Price":48.95
+},{
+  "productId":3,
+  "name":"Soccer Ball",
+  "Description":"FIFA-approved size and weight",
+  "Category":"Soccer",
+  "Price":19.50
+},{
+  "productId":4,
+  "name":"Corner Flags",
+  "Description":"Give your playing field a professional touch",
+  "Category":"Soccer",
+  "Price":275.00
+},{
+  "productId":5,
+  "name":"Stadium",
+  "Description":"Flat-packed 35,000-set stadium",
+  "Category":"Soccer",
+  "Price":79500.00
+},{
+  "productId":6,
+  "name":"Thinking Cap",
+  "Description":"Improving your brain efficiency by 75%",
+  "Category":"Chess",
+  "Price":16.00
+},{
+  "productId":7,
+  "name":"Unsteady Chair",
+  "Description":"Secretly give your opponent a disadvantage",
+  "Category":"Chess",
+  "Price":29.95
+},{
+  "productId":8,
+  "name":"Human Chess Board",
+  "Description":"A fun game for the family",
+  "Category":"Chess",
+  "Price":75.00
+},{
+  "productId":9,
+  "name":"Bling-Bling King",
+  "Description":"Gold-plated,diamond-studded King",
+  "Category":"Chess",
+  "Price":1200.00
+}]
