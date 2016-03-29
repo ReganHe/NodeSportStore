@@ -3,3 +3,15 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  if (products.length === 0)
+    | There's no published content yet.
+    a(href="/login") Log in
+    |  to post and publish.
+  else
+    each product, index in products
+      div
+        h3=product.name
+        p=product.Description
+        h4=product.Price
+        input

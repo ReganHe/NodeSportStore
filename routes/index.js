@@ -1,9 +1,12 @@
-var express = require('express');
-var router = express.Router();
+exports.products = require('./products');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+/*
+ * GET home page.
+ */
 
-module.exports = router;
+exports.index = function(req, res, next){
+  req.collections.products.find({}).toArray(function(error, products){
+    if (error) return next(error);
+    res.render('index', { products: products,title:"SportStore"});
+  })
+};
