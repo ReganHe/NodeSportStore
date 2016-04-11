@@ -1,3 +1,4 @@
+/** @jsx React.DOM */
 var React = require("react");
 var MainHeader = require('./main_header');
 var ProductStore = require("../flux/ProductStore");

@@ -1,3 +1,4 @@
+/** @jsx React.DOM */
 var React = require("react");
 var Promise = require('es6-promise').Promise;
 var AsyncState = require('react-router').AsyncState;
