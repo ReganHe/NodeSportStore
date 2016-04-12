@@ -25,7 +25,8 @@
     "react-router": "git://github.com/karlmikko/react-router.git#server-render",
     "serve-favicon": "~2.3.0",
     "superagent": "~0.15.7",
-    "webpack": "^1.11.0"
+    "webpack": "^1.11.0",
+    "object-assign": "^4.0.1"
   },
   "devDependencies": {
     "react-tools": "^0.11.1"

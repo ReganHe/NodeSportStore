@@ -16,20 +16,6 @@ Dispatcher.register(function(payload) {
 });
 
 var App = React.createClass({
-  handleChange: function() {
-    ProductStore.listProducts(function(products) {
-      console.debug("TODO: update app state based on products returned by ProductStore.listProducts (once it actually returns some)");
-    });
-  },
-
-  componentDidMount: function() {
-    ProductStore.addChangeListener(this.handleChange);
-  },
-
-  componentWillUnmount: function() {
-    ProductStore.removeChangeListener(this.handleChange);
-  },
-
   render: function () {
     return (
       <div className='app'>
