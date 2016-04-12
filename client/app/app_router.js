@@ -7,8 +7,8 @@ var Route = Router.Route;
 var NotFound = Router.NotFound;
 
 // Handlers
-var App = require('./components/app');
-var ListProducts = require('./components/listProducts');
+var App = require('./controller/appController');
+var ListProducts = require('./controller/ListProductsController');
 var NotFoundHandler = require('./components/notFound');
 
 var appRouter = (

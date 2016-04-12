@@ -21,10 +21,18 @@ ProductStore.prototype.removeChangeListener = function(callback) {
 
 // Survey-specific methods
 
-ProductStore.prototype.listProducts = function(callback) {
-  console.debug("TODO: fetch products from server via XHR");
-
-  callback([]);
+ProductStore.prototype.listProducts = function() {
+  return [
+    {
+      id: 'asd123',
+      uri: 'asd123',
+      editUri: 'ad123',
+      title: 'Superhero mashup',
+      publishedDate: new Date(),
+      modifiedDate: new Date(),
+      activity: [121,32,54,12,546]
+    }
+  ];
 }
 
 // The ProductStore is a singleton, so export only the one instance.
