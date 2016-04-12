@@ -7,13 +7,11 @@ var ProductStore = assign({}, EventEmitter.prototype, {
     listProducts: function () {
         return [
             {
-                id: 'asd123',
-                uri: 'asd123',
-                editUri: 'ad123',
-                title: 'Superhero mashup',
-                publishedDate: new Date(),
-                modifiedDate: new Date(),
-                activity: [121, 32, 54, 12, 546]
+                productId: 123,
+                name: 'asd123',
+                description: 'Superhero mashup',
+                category: 'ad123',
+                prize:88.88
             }
         ];
     },

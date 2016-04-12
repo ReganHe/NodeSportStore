@@ -17,11 +17,11 @@ var ProductTable = React.createClass({
       <table className="table product-table">
         <thead>
           <tr>
-            <th>Title</th>
-            <th>Published On</th>
-            <th>Last Active</th>
-            <th>Completions</th>
-            <th>Activity</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Prize</th>
             <th></th>
           </tr>
         </thead>

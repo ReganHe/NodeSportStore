@@ -15,8 +15,7 @@ var appRouter = (
     <Routes location="history">
         <Route title="ProductBuilder" handler={App}>
             <Route name="list" path="/" handler={ListProducts}/>
-            <Route name="take" path="/surveys/:surveyId" handler={NotFoundHandler} />
-            <Route name="edit" path="/surveys/:surveyId/edit" handler={NotFoundHandler} />
+            <Route name="edit" path="/products/:productId/edit" handler={NotFoundHandler} />
             <NotFound title="Page Not Found" handler={NotFoundHandler}/>
         </Route>
     </Routes>
