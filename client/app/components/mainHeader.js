@@ -2,7 +2,7 @@
 var React = require("react");
 var Link = require('react-router').Link;
 
-var MainNav = require('./main_nav');
+var MainNav = require('./mainNav');
 
 var MainHeader = React.createClass({
   render: function () {

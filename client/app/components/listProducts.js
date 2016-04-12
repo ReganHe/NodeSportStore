@@ -3,7 +3,7 @@ var React = require("react");
 var Promise = require('es6-promise').Promise;
 var AsyncState = require('react-router').AsyncState;
 
-var ProductTable = require('./product_table');
+var ProductTable = require('./productTable');
 
 var ListProducts = React.createClass({
   mixins:[AsyncState],

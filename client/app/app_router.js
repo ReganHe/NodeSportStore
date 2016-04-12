@@ -8,8 +8,8 @@ var NotFound = Router.NotFound;
 
 // Handlers
 var App = require('./components/app');
-var ListProducts = require('./components/list_products');
-var NotFoundHandler = require('./components/not_found');
+var ListProducts = require('./components/listProducts');
+var NotFoundHandler = require('./components/notFound');
 
 var appRouter = (
     <Routes location="history">

@@ -1,7 +1,7 @@
 /** @jsx React.DOM */
 var React = require("react");
 var Link = require('react-router').Link;
-var Sparkline = require('./sparkline');
+var Sparkline = require('./sparkLine');
 
 var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 

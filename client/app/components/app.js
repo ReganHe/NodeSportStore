@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 var React = require("react");
-var MainHeader = require('./main_header');
+var MainHeader = require('./mainHeader');
 var ProductStore = require("../flux/ProductStore");
 var Dispatcher = require("../flux/Dispatcher");
 var ProductConstants = require("../flux/ProductConstants");

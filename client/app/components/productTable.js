@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 var React = require("react");
-var ProductTableRow = require('./product_table_row');
+var ProductTableRow = require('./productRow');
 
 var ProductTable = React.createClass({
 
