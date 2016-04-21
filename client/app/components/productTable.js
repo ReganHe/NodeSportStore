@@ -21,7 +21,7 @@ var ProductTable = React.createClass({
             <th>Name</th>
             <th>Category</th>
             <th>Description</th>
-            <th>Prize</th>
+            <th>Price</th>
             <th></th>
           </tr>
         </thead>

@@ -9,7 +9,7 @@ var ProductTableRow = React.createClass({
             name: React.PropTypes.string.isRequired,
             Description: React.PropTypes.string.isRequired,
             Category: React.PropTypes.string.isRequired,
-            Prize: React.PropTypes.number.isRequired
+            Price: React.PropTypes.number.isRequired
         }).isRequired
     },
 
@@ -21,7 +21,7 @@ var ProductTableRow = React.createClass({
                 <td className='title'>{product.name}</td>
                 <td className='title'>{product.Description}</td>
                 <td className='title'>{product.Category}</td>
-                <td className='title'>{product.Prize}</td>
+                <td className='title'>{product.Price}</td>
                 <td>
                     <Link to='edit' productId={product.productId} className="btn btn-link btn-editSurvey edit">
                         <i className="glyphicon glyphicon-pencil"></i>

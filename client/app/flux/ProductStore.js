@@ -11,7 +11,7 @@ var ProductStore = assign({}, EventEmitter.prototype, {
             collections = {
                 products: db.collection('products')
             };
-        collections.products.find({}, {sort: {_id:-1}}).toArray(function(error, products) {
+        collections.products.find({}, {sort: {productId:1}}).toArray(function(error, products) {
             if (error) return next(error);
             callback(products);
             //return products;
