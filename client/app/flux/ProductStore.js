@@ -4,7 +4,7 @@ var CHANGE_EVENT = "changeEvent";
 
 var ProductStore = assign({}, EventEmitter.prototype, {
 // Survey-specific methods
-    listProducts: function () {
+    listProducts: function (callback) {
       var  mongoskin = require('mongoskin'),
             dbUrl = process.env.MONGOHQ_URL || 'mongodb://@localhost:27017/sportStore',
             db = mongoskin.db(dbUrl, {safe: true}),
@@ -13,7 +13,8 @@ var ProductStore = assign({}, EventEmitter.prototype, {
             };
         collections.products.find({}, {sort: {_id:-1}}).toArray(function(error, products) {
             if (error) return next(error);
-            return products;
+            callback(products);
+            //return products;
         });
 
         //return [

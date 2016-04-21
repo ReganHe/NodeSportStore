@@ -6,12 +6,29 @@ var ProductTable = require('../components/productTable');
 var ProductStore = require('../flux/ProductStore')
 
 var ListProductsController = React.createClass({
-    getInitialState: function () {
-        return {
-            products: ProductStore.listProducts()
+    mixins:[AsyncState],
+    statics:{
+        getInitialAsyncState: function(path, query, setState){
+            return new Promise(function(resolve, reject){
+                ProductStore.listProducts(function (products) {
+                    setState( {
+                        products: products
+                    })
+                    resolve();
+                })
+            });
         }
     },
-
+    //getInitialState: function (s) {
+    //    ProductStore.listProducts(function (products) {
+    //        return {
+    //            products: products
+    //        }
+    //    })
+    //    //return {
+    //    //    products: ProductStore.listProducts()
+    //    //}
+    //},
     componentDidMount: function () {
         ProductStore.addChangeListener(this.handleChange);
     },
@@ -22,7 +39,7 @@ var ListProductsController = React.createClass({
 
     handleChange: function () {
         this.setState({
-            products:ProductStore.listProducts()
+            products: ProductStore.listProducts()
         });
     },
 
