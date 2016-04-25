@@ -9,14 +9,9 @@ var App = React.createClass({
                 <div className="navbar navbar-inverse">
                     <a className="navbar-brand" href="#">SPORTS STORE</a>
                 </div>
-                <div className="panel panel-default row">
-                    <div className="col-xs-3">
-                        Categories go here
-                    </div>
-                    <div className='col-xs-8'>
+
                         {<this.props.activeRouteHandler />}
-                    </div>
-                </div>
+
             </div>
         );
     }

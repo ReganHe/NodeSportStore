@@ -4,6 +4,7 @@ var Promise = require('es6-promise').Promise;
 var AsyncState = require('react-router').AsyncState;
 var ProductRepeator = require('../components/productRepeator');
 var ProductStore = require('../flux/ProductStore')
+var CategoryList = require('../components/CategoryList');
 
 var ListProductsController = React.createClass({
     mixins: [AsyncState],
@@ -48,8 +49,25 @@ var ListProductsController = React.createClass({
             return <div>Loading ... </div>
         }
 
+        var productCategories = [];
+        var keys = {};
+        for (var i = 0; i < this.state.products.length; i++) {
+            var val = this.state.products[i].Category;
+            if (!keys[val]) {
+                keys[val] = true;
+                productCategories.push(val);
+            }
+        }
+
         return (
-            <ProductRepeator products={this.state.products}/>
+            <div className="panel panel-default row">
+                <div className="col-xs-3">
+                    <CategoryList categories={productCategories}/>
+                </div>
+                <div className='col-xs-8'>
+                    <ProductRepeator products={this.state.products}/>
+                </div>
+            </div>
         );
     }
 });
