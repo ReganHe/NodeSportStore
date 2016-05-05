@@ -11,8 +11,9 @@ var ListProductsController = React.createClass({
     statics: {
         getInitialAsyncState: function (path, query, setState) {
             return new Promise(function (resolve, reject) {
-                ProductStore.listProducts(function (products) {
+                ProductStore.listProducts(null,function (products) {
                     setState({
+                        category:null,
                         products: products
                     })
                     resolve();
@@ -40,7 +41,8 @@ var ListProductsController = React.createClass({
 
     handleChange: function () {
         this.setState({
-            products: ProductStore.listProducts()
+            products: ProductStore.listProducts(this.state.category,function(){
+            })
         });
     },
 

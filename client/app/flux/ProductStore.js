@@ -4,18 +4,27 @@ var CHANGE_EVENT = "changeEvent";
 
 var ProductStore = assign({}, EventEmitter.prototype, {
 // Survey-specific methods
-    listProducts: function (callback) {
-      var  mongoskin = require('mongoskin'),
+    listProducts: function (category, callback) {
+        var mongoskin = require('mongoskin'),
             dbUrl = process.env.MONGOHQ_URL || 'mongodb://@localhost:27017/sportStore',
             db = mongoskin.db(dbUrl, {safe: true}),
             collections = {
                 products: db.collection('products')
             };
-        collections.products.find({}, {sort: {productId:1}}).toArray(function(error, products) {
-            if (error) return next(error);
-            callback(products);
-            //return products;
-        });
+        if (category) {
+            collections.products.find({"Category": category}, {sort: {productId: 1}}).toArray(function (error, products) {
+                if (error) return next(error);
+                callback(products);
+                //return products;
+            });
+        }
+        else {
+            collections.products.find({}, {sort: {productId: 1}}).toArray(function (error, products) {
+                if (error) return next(error);
+                callback(products);
+                //return products;
+            });
+        }
 
         //return [
         //    {
