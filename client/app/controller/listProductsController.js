@@ -21,16 +21,6 @@ var ListProductsController = React.createClass({
             });
         }
     },
-    //getInitialState: function (s) {
-    //    ProductStore.listProducts(function (products) {
-    //        return {
-    //            products: products
-    //        }
-    //    })
-    //    //return {
-    //    //    products: ProductStore.listProducts()
-    //    //}
-    //},
     componentDidMount: function () {
         ProductStore.addChangeListener(this.handleChange);
     },
