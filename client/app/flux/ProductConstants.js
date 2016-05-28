@@ -1,3 +1,3 @@
 module.exports = {
-  RECORD_PRODUCT: "record"
+  SELECT_CATEGORY: "selectCategory"
 }

@@ -2,10 +2,10 @@ var Dispatcher = require("./ProductDispatcher");
 var ProductConstants = require("./ProductConstants");
 
 var SurveyActions = {
-    record: function (results) {
+    selectCategory: function (categoryId) {
         Dispatcher.dispatch({
-            actionType: ProductConstants.RECORD_PRODUCT,
-            results: results
+            actionType: ProductConstants.SELECT_CATEGORY,
+            categoryId: categoryId
         });
     }
 };

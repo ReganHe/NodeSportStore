@@ -5,8 +5,7 @@ var ProductConstants = require("./ProductConstants");
 
 ProductDispatcher.register(function (action) {
   switch(action.actionType) {
-    case ProductConstants.RECORD_PRODUCT:
-      //ProductStore.addNewItemHandler(action.text);
+    case ProductConstants.SELECT_CATEGORY:
       ProductStore.emitChange();
       break;
     default:

@@ -1,16 +1,15 @@
 var EventEmitter = require("event-emitter");
 var assign = require('object-assign');
 var CHANGE_EVENT = "changeEvent";
-
+var mongoskin = require('mongoskin'),
+    dbUrl = process.env.MONGOHQ_URL || 'mongodb://@localhost:27017/sportStore',
+    db = mongoskin.db(dbUrl, {safe: true}),
+    collections = {
+        products: db.collection('products')
+    };
 var ProductStore = assign({}, EventEmitter.prototype, {
 // Survey-specific methods
     listProducts: function (category, callback) {
-        var mongoskin = require('mongoskin'),
-            dbUrl = process.env.MONGOHQ_URL || 'mongodb://@localhost:27017/sportStore',
-            db = mongoskin.db(dbUrl, {safe: true}),
-            collections = {
-                products: db.collection('products')
-            };
         if (category) {
             collections.products.find({"Category": category}, {sort: {productId: 1}}).toArray(function (error, products) {
                 if (error) return next(error);
@@ -25,18 +24,17 @@ var ProductStore = assign({}, EventEmitter.prototype, {
                 //return products;
             });
         }
-
-        //return [
-        //    {
-        //        productId: 123,
-        //        name: 'asd123',
-        //        description: 'Superhero mashup',
-        //        category: 'ad123',
-        //        prize:88.88
-        //    }
-        //];
     },
-
+    listProducts2: function (category) {
+        collections.products.find({"Category": category}, {sort: {productId: 1}}, function (error, products) {
+            return new Promise(function (resolve, reject) {
+                if (error) {
+                    reject(error);
+                }
+                resolve(products);
+            })
+        })
+    },
 // Basic event handling functions
     emitChange: function () {
         this.emitter.emit(CHANGE_EVENT);

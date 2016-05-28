@@ -3,8 +3,9 @@ var React = require("react");
 var Promise = require('es6-promise').Promise;
 var AsyncState = require('react-router').AsyncState;
 var ProductRepeaterController = require('./productRepeaterController');
-var CategoryListController = require('./categoryListController');
-var ProductStore = require('../flux/ProductStore')
+var CategoryList = require('../components/categoryList');
+var ProductStore = require('../flux/ProductStore');
+var ProductActions = require('../flux/ProductActions');
 
 var CategoricalProductRepeaterController = React.createClass({
     mixins: [AsyncState],
@@ -31,11 +32,14 @@ var CategoricalProductRepeaterController = React.createClass({
 
     handleChange: function () {
         this.setState({
-            products: ProductStore.listProducts(this.state.category, function () {
-            })
+            products: ProductStore.listProducts2(this.state.category)
         });
     },
-
+    selectCategory: function (event) {
+        var currentCategoryId = event.target.childNodes[0].data;
+        this.state.category = currentCategoryId;
+        ProductActions.selectCategory(currentCategoryId);
+    },
     render: function () {
         if (!this.state.products) {
             return (
@@ -55,7 +59,7 @@ var CategoricalProductRepeaterController = React.createClass({
 
         return (
             <div className="panel panel-default row">
-                <CategoryListController categories={productCategories}/>
+                <CategoryList categories={productCategories} onClick={this.selectCategory}/>
                 <ProductRepeaterController products={this.state.products}/>
             </div>
         );
