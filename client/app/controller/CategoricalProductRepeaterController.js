@@ -2,20 +2,20 @@
 var React = require("react");
 var Promise = require('es6-promise').Promise;
 var AsyncState = require('react-router').AsyncState;
-var ProductRepeater = require('../components/productRepeater');
+var ProductRepeaterController = require('./productRepeaterController');
+var CategoryListController = require('./categoryListController');
 var ProductStore = require('../flux/ProductStore')
-var CategoryList = require('../components/categoryList');
 
-var ListProductsController = React.createClass({
+var CategoricalProductRepeaterController = React.createClass({
     mixins: [AsyncState],
     statics: {
         getInitialAsyncState: function (path, query, setState) {
             return new Promise(function (resolve, reject) {
-                ProductStore.listProducts(null,function (products) {
+                ProductStore.listProducts(null, function (products) {
                     setState({
-                        category:null,
+                        category: null,
                         products: products
-                    })
+                    });
                     resolve();
                 })
             });
@@ -31,15 +31,17 @@ var ListProductsController = React.createClass({
 
     handleChange: function () {
         this.setState({
-            products: ProductStore.listProducts(this.state.category,function(){
+            products: ProductStore.listProducts(this.state.category, function () {
             })
         });
     },
 
     render: function () {
-        if (!this.state.products) {
-            return <div>Loading ... </div>
-        }
+/*        if (!this.state.products) {
+            return (
+                <div>Loading ... </div>
+            );
+        }*/
 
         var productCategories = [];
         var keys = {};
@@ -52,16 +54,13 @@ var ListProductsController = React.createClass({
         }
 
         return (
-            <div className="panel panel-default row">
-                <div className="col-xs-3">
-                    <CategoryList categories={productCategories}/>
-                </div>
-                <div className='col-xs-8'>
-                    <ProductRepeater products={this.state.products}/>
-                </div>
+            <div>
+                <ProductRepeaterController products={this.state.products}/>
+                <CategoryListController categories={this.state.categories}/>
             </div>
         );
     }
 });
 
-module.exports = ListProductsController;
+module.exports = CategoricalProductRepeaterController;
+

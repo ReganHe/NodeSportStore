@@ -2,7 +2,7 @@
 var React = require("react");
 var ProductDetail = require('./productDetail');
 
-var ProductRepeator = React.createClass({
+var ProductRepeater = React.createClass({
     propTypes: {
         products: React.PropTypes.array.isRequired
     },
@@ -11,11 +11,15 @@ var ProductRepeator = React.createClass({
         var details = this.props.products.map(function (product, i) {
             return <ProductDetail key={i} product={product}/>;
         });
-        
+
         return (
-            <div>{details}</div>
+            <div className="panel panel-default row">
+                <div className='col-xs-8'>
+                    {details}
+                </div>
+            </div>
         );
     }
 });
 
-module.exports = ProductRepeator;
+module.exports = ProductRepeater;

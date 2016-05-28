@@ -9,9 +9,7 @@ var App = React.createClass({
                 <div className="navbar navbar-inverse">
                     <a className="navbar-brand" href="#">SPORTS STORE</a>
                 </div>
-
-                        {<this.props.activeRouteHandler />}
-
+                {<this.props.activeRouteHandler />}
             </div>
         );
     }
