@@ -13,10 +13,8 @@ var ProductRepeater = React.createClass({
         });
 
         return (
-            <div className="panel panel-default row">
-                <div className='col-xs-8'>
-                    {details}
-                </div>
+            <div className='col-xs-8'>
+                {details}
             </div>
         );
     }

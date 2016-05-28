@@ -15,11 +15,9 @@ var CategoryList = React.createClass({
             );
         });
         return (
-            <div className="panel panel-default row">
-                <div className="col-xs-3">
-                    <a className="btn btn-block btn-default btn-lg">Home</a>
-                    {details}
-                </div>
+            <div className="col-xs-3">
+                <a className="btn btn-block btn-default btn-lg">Home</a>
+                {details}
             </div>
         );
     }

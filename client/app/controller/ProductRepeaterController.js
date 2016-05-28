@@ -4,7 +4,7 @@ var ProductRepeater = require('../components/ProductRepeater');
 
 var ProductRepeaterController = React.createClass({
     propTypes: {
-        CurrentCategoryId: React.PropTypes.array.isRequired
+        products: React.PropTypes.array.isRequired
     },
     render: function () {
         return (

@@ -37,11 +37,11 @@ var CategoricalProductRepeaterController = React.createClass({
     },
 
     render: function () {
-/*        if (!this.state.products) {
+        if (!this.state.products) {
             return (
                 <div>Loading ... </div>
             );
-        }*/
+        }
 
         var productCategories = [];
         var keys = {};
@@ -54,9 +54,9 @@ var CategoricalProductRepeaterController = React.createClass({
         }
 
         return (
-            <div>
+            <div className="panel panel-default row">
+                <CategoryListController categories={productCategories}/>
                 <ProductRepeaterController products={this.state.products}/>
-                <CategoryListController categories={this.state.categories}/>
             </div>
         );
     }
