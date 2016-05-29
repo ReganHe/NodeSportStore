@@ -26,14 +26,14 @@ var ProductStore = assign({}, EventEmitter.prototype, {
         }
     },
     listProducts2: function (category) {
-        collections.products.find({"Category": category}, {sort: {productId: 1}}, function (error, products) {
-            return new Promise(function (resolve, reject) {
+        return new Promise(function (resolve, reject) {
+            collections.products.find({"Category": category}, {sort: {productId: 1}}).toArray(function (error, products) {
                 if (error) {
                     reject(error);
                 }
                 resolve(products);
-            })
-        })
+            });
+        });
     },
 // Basic event handling functions
     emitChange: function () {

@@ -31,9 +31,12 @@ var CategoricalProductRepeaterController = React.createClass({
     },
 
     handleChange: function () {
-        this.setState({
-            products: ProductStore.listProducts2(this.state.category)
-        });
+        ProductStore.listProducts2(this.state.category)
+            .then(function (products) {
+                this.setState({
+                    products:products
+                });
+            });
     },
     selectCategory: function (currentCategoryId) {
         this.state.category = currentCategoryId;
