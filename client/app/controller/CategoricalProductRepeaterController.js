@@ -35,8 +35,7 @@ var CategoricalProductRepeaterController = React.createClass({
             products: ProductStore.listProducts2(this.state.category)
         });
     },
-    selectCategory: function (event) {
-        var currentCategoryId = event.target.childNodes[0].data;
+    selectCategory: function (currentCategoryId) {
         this.state.category = currentCategoryId;
         ProductActions.selectCategory(currentCategoryId);
     },
