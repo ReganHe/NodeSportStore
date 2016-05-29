@@ -1,6 +1,6 @@
 var webpack = require('webpack');
-//var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
-//var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
     entry: './client/client.js',
@@ -24,9 +24,9 @@ module.exports = {
             }
         ]
     }
-    //,
-    //plugins: [
-    //  new CommonsChunkPlugin('./public/build/init.js'),
-    //  new OpenBrowserPlugin({ url: 'http://localhost:3003' })
-    //]
+    ,
+    plugins: [
+      new CommonsChunkPlugin('./public/build/init.js'),
+      new OpenBrowserPlugin({ url: 'http://localhost:3003' })
+    ]
 };
