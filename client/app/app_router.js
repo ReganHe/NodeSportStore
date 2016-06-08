@@ -1,24 +1,13 @@
-/** @jsx React.DOM */
+import React from 'react'
+import {Route,IndexRoute} from 'react-router'
+import App from './controller/appController';
+import ListProducts from './controller/ListProductsController';
+import NotFound from './components/notFound';
 
-var React = require("react");
-var Router = require("react-router");
-var Routes = Router.Routes;
-var Route = Router.Route;
-var NotFound = Router.NotFound;
+module.exports = (
+    <Route path="/" component={App}>
+        <IndexRoute component={ListProducts}/>
+        <Route name="edit" path="/products/:productId/edit" component={NotFound}/>
+    </Route>
 
-// Handlers
-var App = require('./controller/appController');
-var ListProducts = require('./controller/ListProductsController');
-var NotFoundHandler = require('./components/notFound');
-
-var appRouter = (
-    <Routes location="history">
-        <Route title="ProductBuilder" handler={App}>
-            <Route name="list" path="/" handler={ListProducts}/>
-            <Route name="edit" path="/products/:productId/edit" handler={NotFoundHandler} />
-            <NotFound title="Page Not Found" handler={NotFoundHandler}/>
-        </Route>
-    </Routes>
 );
-
-module.exports = appRouter;

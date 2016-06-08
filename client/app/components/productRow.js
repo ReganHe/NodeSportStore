@@ -1,8 +1,7 @@
-/** @jsx React.DOM */
-var React = require("react");
-var Link = require('react-router').Link;
+import React from 'react'
+import { Link } from 'react-router'
 
-var ProductTableRow = React.createClass({
+export default React.createClass({
     propTypes: {
         product: React.PropTypes.shape({
             productId: React.PropTypes.number.isRequired,
@@ -13,7 +12,7 @@ var ProductTableRow = React.createClass({
         }).isRequired
     },
 
-    render: function () {
+    render () {
         var product = this.props.product;
         return (
             <tr>
@@ -31,5 +30,3 @@ var ProductTableRow = React.createClass({
         );
     }
 });
-
-module.exports = ProductTableRow;

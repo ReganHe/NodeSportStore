@@ -1,13 +1,10 @@
-/** @jsx React.DOM */
-var React = require('react');
+import React from 'react'
 
-var NotFound = React.createClass({
-  render:function(){
+export default  React.createClass({
+  render(){
     return <div>
       <h1>404</h1>
       <p>The Page you were looking for isn&apos;t here!</p>
     </div>;
   }
 });
-
-module.exports = NotFound;

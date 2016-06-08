@@ -1,12 +1,11 @@
-/** @jsx React.DOM */
-var React = require("react");
+import React from 'react'
 
-var CategoryList = React.createClass({
+export default React.createClass({
     propTypes: {
         categories: React.PropTypes.array.isRequired
     },
 
-    render: function () {
+    render () {
         var details = this.props.categories.map(function (category, i) {
             return (
                 <a className="btn btn-block btn-default btn-lg">
@@ -22,5 +21,3 @@ var CategoryList = React.createClass({
         );
     }
 });
-
-module.exports = CategoryList;

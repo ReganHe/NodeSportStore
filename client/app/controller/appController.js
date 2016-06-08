@@ -1,20 +1,14 @@
-/** @jsx React.DOM */
-var React = require("react");
-var MainHeader = require('../components/mainHeader');
+import React from 'react';
 
-var App = React.createClass({
+export default  React.createClass({
     render: function () {
         return (
             <div>
                 <div className="navbar navbar-inverse">
                     <a className="navbar-brand" href="#">SPORTS STORE</a>
                 </div>
-
-                        {<this.props.activeRouteHandler />}
-
+                {this.props.children }
             </div>
         );
     }
 });
-
-module.exports = App;

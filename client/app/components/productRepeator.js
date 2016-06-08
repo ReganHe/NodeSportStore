@@ -1,21 +1,18 @@
-/** @jsx React.DOM */
-var React = require("react");
-var ProductDetail = require('./productDetail');
+import React from 'react';
+import ProductDetail  from'./productDetail';
 
-var ProductRepeator = React.createClass({
+export default  React.createClass({
     propTypes: {
         products: React.PropTypes.array.isRequired
     },
 
-    render: function () {
+    render () {
         var details = this.props.products.map(function (product, i) {
             return <ProductDetail key={i} product={product}/>;
         });
-        
+
         return (
             <div>{details}</div>
         );
     }
 });
-
-module.exports = ProductRepeator;

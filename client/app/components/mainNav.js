@@ -1,9 +1,8 @@
-/** @jsx React.DOM */
-var React = require("react");
-var Link = require('react-router').Link;
+import React from 'react'
+import { Link } from 'react-router'
 
-var MainNav = React.createClass({
-  render: function () {
+export default React.createClass({
+  render () {
     return (
       <nav className='main-nav' role='navigation'>
         <ul className='nav navbar-nav'>
@@ -13,5 +12,3 @@ var MainNav = React.createClass({
     );
   }
 });
-
-module.exports = MainNav;

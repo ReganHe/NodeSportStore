@@ -1,19 +1,18 @@
-/** @jsx React.DOM */
-var React = require("react");
+import React from 'react';
+import ProductRepeator from '../components/productRepeator';
+import ProductStore from '../flux/ProductStore'
+import CategoryList from '../components/CategoryList';
+
 var Promise = require('es6-promise').Promise;
 var AsyncState = require('react-router').AsyncState;
-var ProductRepeator = require('../components/productRepeator');
-var ProductStore = require('../flux/ProductStore')
-var CategoryList = require('../components/CategoryList');
-
-var ListProductsController = React.createClass({
+export default React.createClass({
     mixins: [AsyncState],
     statics: {
-        getInitialAsyncState: function (path, query, setState) {
+        getInitialAsyncState (path, query, setState) {
             return new Promise(function (resolve, reject) {
-                ProductStore.listProducts(null,function (products) {
+                ProductStore.listProducts(null, function (products) {
                     setState({
-                        category:null,
+                        category: null,
                         products: products
                     })
                     resolve();
@@ -21,22 +20,22 @@ var ListProductsController = React.createClass({
             });
         }
     },
-    componentDidMount: function () {
+    componentDidMount () {
         ProductStore.addChangeListener(this.handleChange);
     },
 
-    componentWillUnmount: function () {
+    componentWillUnmount () {
         ProductStore.removeChangeListener(this.handleChange);
     },
 
-    handleChange: function () {
+    handleChange () {
         this.setState({
-            products: ProductStore.listProducts(this.state.category,function(){
+            products: ProductStore.listProducts(this.state.category, function () {
             })
         });
     },
 
-    render: function () {
+    render () {
         if (!this.state.products) {
             return <div>Loading ... </div>
         }
@@ -63,5 +62,3 @@ var ListProductsController = React.createClass({
         );
     }
 });
-
-module.exports = ListProductsController;
