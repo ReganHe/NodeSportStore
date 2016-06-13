@@ -3,14 +3,15 @@
 //and allow for server side to include just the app
 
 //Only the client side needs es5-shim so only include in bundle not app
-require('es5-shim/es5-shim');
-require('es5-shim/es5-sham');
+//require('es5-shim/es5-shim');
+//require('es5-shim/es5-sham');
 
-var React = require('react/addons');
+//var React = require('react/addons');
+var React = require('react');
 var app_router = require('./app/app_router');
 
 
 //allow react dev tools work
-window.React = React;
+//window.React = React;
 
 React.renderComponent(app_router, document.body);

@@ -13,7 +13,7 @@ These in turn may have more data dependencies.
 Hence the need for step 4.
 
 */
-require('babel/register')
+//require('babel/register')
 require('node-jsx').install({
   harmony:true,
   extension:'.jsx'

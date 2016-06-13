@@ -1,6 +1,6 @@
 //Server side code to start here
 //expressjs
-require("babel/register")
+//require("babel/register")
 var express = require('express');
 var app = express();
 
