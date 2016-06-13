@@ -6,7 +6,7 @@ var app = express();
 
 var port = process.env.PORT || 3003;
 
-app.use('/api', require('body-parser').json());
+//app.use('/api', require('body-parser').json());
 
 app.use('/api', function(req, res, next){
     console.error(req.method + " " + req.url + "\n" + require('util').inspect(req.body));

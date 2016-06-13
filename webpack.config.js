@@ -3,9 +3,7 @@ var path = require('path');
 module.exports = {
     entry: './client/client.js',
     output: {
-        path: path.join(__dirname, 'public'),
-        publicPath: './public/',
-        filename: 'bundle.js'
+        filename: './public/build/bundle.js'
     },
     resolve: {
         extensions: ['', '.js', '.json', '.md']
