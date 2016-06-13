@@ -1,7 +1,7 @@
 /**
  * Created by heoo442 on 2016/5/28.
  */
-/** @jsx React.DOM */
+
 var React = require("react");
 var ProductRepeater = require('productRepeater');
 var CategoryList = require('categoryList');

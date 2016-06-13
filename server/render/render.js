@@ -13,13 +13,14 @@ These in turn may have more data dependencies.
 Hence the need for step 4.
 
 */
-
-require('node-jsx').install({harmony: true});
+require('babel/register')
+require('node-jsx').install({
+  harmony:true,
+  extension:'.jsx'
+});
 
 var fs = require("fs");
-
 var Router = require("react-router");
-
 var app_router = require("../../client/app/app_router");
 var router = require('express').Router({caseSensitive: true, strict: true});
 
