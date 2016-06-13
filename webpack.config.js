@@ -1,16 +1,30 @@
 var webpack = require('webpack');
+var path = require('path');
 module.exports = {
     entry: './client/client.js',
     output: {
-        path: 'public/build',
+        path: path.join(__dirname, 'public'),
+        publicPath: './public/',
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['', '.js'],
+        extensions: ['', '.js', '.json', '.md']
     },
     module: {
         loaders: [
-            {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?presets[]=es2015&presets[]=react'}
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader?presets[]=es2015&presets[]=react'
+            },
+            {
+                test: /\.json$/,
+                loader: 'json-loader'
+            },
+            {
+                test: /\.md$/,
+                exclude: /node_modules/
+            }
         ]
     },
     plugins: process.env.NODE_ENV === 'production' ? [
