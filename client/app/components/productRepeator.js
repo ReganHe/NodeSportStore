@@ -8,7 +8,7 @@ export default  React.createClass({
 
     render () {
         var details = this.props.products.map(function (product, i) {
-            return <ProductDetail key={i} product={product}/>;
+            return <ProductDetail key={i} product={product} />;
         });
 
         return (

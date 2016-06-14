@@ -4,7 +4,6 @@ var CHANGE_EVENT = "changeEvent";
 var emitter = EventEmitter({}), listener;
 
 var ProductStore = {
-// Survey-specific methods
     initProducts: function () {
         return [
             {
@@ -13,6 +12,13 @@ var ProductStore = {
                 Description: 'Superhero',
                 Category: 'ad123',
                 Prize: 88.88
+            },
+            {
+                productId: 124,
+                name: 'asd124',
+                Description: 'Superhero4',
+                Category: 'ad124',
+                Prize: 88.84
             }
         ];
     },
