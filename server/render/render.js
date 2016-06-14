@@ -24,7 +24,7 @@ var app_router = require("../../client/app/app_router");
 var router = require('express').Router({caseSensitive: true, strict: true});
 
 //only read on startup
-var template = fs.readFileSync(__dirname + "/../../client/app.html", {encoding:'utf8'});
+var template = fs.readFileSync(__dirname + "/../../client/index.html", {encoding:'utf8'});
 
 //middleware to pass to react client app
 router.use(function (req, res, next) {

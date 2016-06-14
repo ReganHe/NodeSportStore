@@ -1,24 +1,30 @@
-import React from 'react';
-import ProductRepeator from '../components/productRepeator';
-import ProductStore from '../flux/ProductStore'
-import CategoryList from '../components/CategoryList';
-
+var React = require("react");
 var Promise = require('es6-promise').Promise;
 var AsyncState = require('react-router').AsyncState;
+var ProductRepeator = require('../components/productRepeator');
+var ProductStore = require('../flux/ProductStore')
+var CategoryList = require('../components/CategoryList');
+
 export default React.createClass({
-    mixins: [AsyncState],
-    statics: {
-        getInitialAsyncState (path, query, setState) {
-            return new Promise(function (resolve, reject) {
-                ProductStore.listProducts(null, function (products) {
-                    setState({
-                        category: null,
-                        products: products
-                    })
-                    resolve();
-                })
-            });
-        }
+    //mixins: [AsyncState],
+    //statics: {
+    //    getInitialAsyncState (path, query, setState) {
+    //        return new Promise(function (resolve, reject) {
+    //            ProductStore.listProducts(null, function (products) {
+    //                setState({
+    //                    category: null,
+    //                    products: products
+    //                })
+    //                resolve();
+    //            })
+    //        });
+    //    }
+    //},
+    getInitialState(){
+        return {
+            category: null,
+            products: ProductStore.initProducts()
+        };
     },
     componentDidMount () {
         ProductStore.addChangeListener(this.handleChange);
@@ -29,14 +35,16 @@ export default React.createClass({
     },
 
     handleChange () {
-        this.setState({
-            products: ProductStore.listProducts(this.state.category, function () {
-            })
+        ProductStore.listProducts(this.state.category, function (products) {
+            this.setState({
+                category: this.state.category,
+                products: products
+            });
         });
     },
 
     render () {
-        if (!this.state.products) {
+        if (!this.state || !this.state.products) {
             return <div>Loading ... </div>
         }
 

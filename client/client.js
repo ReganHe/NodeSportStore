@@ -8,5 +8,5 @@ import routes from './app/app_router'
 
 render(
     <Router routes={routes} history={browserHistory}/>,
-    document.body
+    document.getElementById('app')
 );
