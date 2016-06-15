@@ -1,5 +1,5 @@
-var Dispatcher = require("./ProductDispatcher");
-var ProductConstants = require("./ProductConstants");
+import {Dispatcher} from './ProductDispatcher';
+import {ProductConstants} from './ProductConstants';
 
 var SurveyActions = {
     record: function (results) {

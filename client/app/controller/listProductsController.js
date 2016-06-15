@@ -1,10 +1,13 @@
-var React = require("react");
-var Promise = require('es6-promise').Promise;
-var AsyncState = require('react-router').AsyncState;
-var ProductRepeator = require('../components/productRepeator');
-var ProductStore = require('../flux/ProductStore')
-var CategoryList = require('../components/CategoryList');
+import {React} from 'react';
+import {ES6Promise} from 'es6-promise';
+import {ReactRouter} from 'react-router';
 
+import {ProductRepeator} from '../components/productRepeator';
+import {ProductStore} from '../flux/ProductStore';
+import {CategoryList} from '../components/CategoryList';
+
+var Promise = ES6Promise.promise;
+var AsyncState = ReactRouter.AsyncState;
 export default React.createClass({
     //mixins: [AsyncState],
     //statics: {

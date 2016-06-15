@@ -1,8 +1,8 @@
-var Dispatcher = require('flux').Dispatcher;
-var ProductDispatcher = new Dispatcher();
-var ProductStore = require('./ProductStore');
-var ProductConstants = require("./ProductConstants");
+import Flux from 'flux'
+import {ProductStore} from './ProductStore';
+import {ProductConstants} from './ProductConstants';
 
+var ProductDispatcher = new Flux.Dispatcher();
 ProductDispatcher.register(function (action) {
   switch(action.actionType) {
     case ProductConstants.RECORD_PRODUCT:

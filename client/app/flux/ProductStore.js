@@ -1,8 +1,8 @@
-var EventEmitter = require("event-emitter");
-var assign = require('object-assign');
+import EventEmitter from 'event-emitter';
+import assign  from 'object-assign';
+
 var CHANGE_EVENT = "changeEvent";
 var emitter = EventEmitter({}), listener;
-
 var ProductStore = {
     initProducts: function () {
         return [
