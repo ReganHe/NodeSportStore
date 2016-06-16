@@ -3,7 +3,7 @@ import ProductDetail  from'./productDetail';
 
 export default  React.createClass({
     propTypes: {
-        products: React.PropTypes.array.isRequired
+        products: React.PropTypes.object.isRequired
     },
 
     render () {

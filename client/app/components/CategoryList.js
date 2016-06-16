@@ -2,7 +2,7 @@ import React from 'react'
 
 export default React.createClass({
     propTypes: {
-        categories: React.PropTypes.array.isRequired
+        categories: React.PropTypes.object.isRequired
     },
 
     render () {
