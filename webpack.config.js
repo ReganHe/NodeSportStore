@@ -6,7 +6,7 @@ module.exports = {
         filename: './public/bundle.js'
     },
     resolve: {
-        extensions: ['', '.js', '.json', '.md']
+        extensions: ['', '.js', '.json']
     },
     module: {
         loaders: [
@@ -18,10 +18,6 @@ module.exports = {
             {
                 test: /\.json$/,
                 loader: 'json-loader'
-            },
-            {
-                test: /\.md$/,
-                exclude: /node_modules/
             }
         ]
     },
